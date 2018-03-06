@@ -43,7 +43,10 @@ else
 		LEFT JOIN
 			categories
 		ON
-			topics.topic_cat = categories.cat_id";
+			topics.topic_cat = categories.cat_id
+		ORDER BY
+			topic_date
+		DESC LIMIT 1";
 		//WHERE
 			//topics.topic_cat = " . mysql_real_escape_string($_GET['id']);
         	$result2 = mysql_query($sql2);
@@ -70,6 +73,7 @@ else
             	}
             }
         }
+		echo '</table>';
     }
 }
 
